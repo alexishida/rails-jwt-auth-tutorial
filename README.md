@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Token-based authentication with Ruby on Rails 5 API
+Read more at https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api#ha96xEYTyL51fBSY.99
 
-Things you may want to cover:
 
-* Ruby version
+Rails Commands 
 
-* System dependencies
+    bundle install
+    
+    rails db:create
+    
+    rails db:migrate
+    
+    rails db:seed
 
-* Configuration
+    rails s
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+Testing API
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+    $ curl -H "Content-Type: application/json" -X POST -d '{"email":"alexishida@gmail.com","password":"123456"}' http://localhost:3000/authenticate
 
-* ...
+
+    $ curl -H "Authorization: <token>" http://localhost:3000/items
